@@ -28,7 +28,7 @@ end
 
 --
 lspconfig.elixirls.setup {
-    cmd = { "/home/fabri/.elixirlsp/language_server.sh" },
+    cmd = { "/home/fabri/.elixir-ls/language_server.sh"},
     on_attach = on_attach,
     capabilities = capabilities,
     flags = {
@@ -57,6 +57,9 @@ lspconfig.rust_analyzer.setup {
             },
             diagnostics = {
                 enable = false,
+            },
+            checkOnSave = {
+              command = "clippy"
             },
         },
     },

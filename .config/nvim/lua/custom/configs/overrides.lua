@@ -30,6 +30,8 @@ M.treesitter = {
     "cmake",
     "haskell",
     "ocaml",
+    "heex",
+    "eex",
   },
   indent = {
     enable = true,

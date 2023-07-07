@@ -3,13 +3,12 @@ local M = {}
 
 M.general = {
   n = {
-    ["<C-h>"] = {"<cmd> TmuxNavigateLeft<CR>", "Window Left"},
-    ["<C-l>"] = {"<cmd> TmuxNavigateRight<CR>", "Window Right"},
-    ["<C-j>"] = {"<cmd> TmuxNavigateDown<CR>", "Window Down"},
-    ["<C-k>"] = {"<cmd> TmuxNavigateUp<CR>", "Window Up"},
-    ["<C-o>"] = {"<cmd> NvimTreeToggle %<CR>", "Toogle NerdTree current"},
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "Window Left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "Window Right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "Window Down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "Window Up" },
     ["<leader>fg"] = { "<cmd> Telescope git_files <CR>", "Find files" },
-    -- Telescope LSP 
+    -- Telescope LSP
 
     ["<leader>ff"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>ft"] = { "<cmd> Telescop treesitter <CR>", "Find treesitter" },
@@ -27,24 +26,18 @@ M.general = {
     -- ["<leader>vws"] = { "<cmd> Telescope lsp_workspace_symbols <CR>", "Find Workspace Symbols" },
 
     ["<leader>u"] = { "<cmd> UndotreeToggle <CR>", "Undo tree" },
-    -- ["<leader>ca"] = {
+    ["gf"] = { ":gf :edit <cfile>", "Open file under cursor" },
+  },
+  v = {
+    ["<"] = { ":<gv" },
+    [">"] = { ":>gv" },
+    ["J"] = { ":'<,'>move+2<cr>gv=gv", "Move Line down" },
+    ["K"] = { ":'<,'>move-2<cr>gv=gv", "Move Line up" },
+  },
+  x = {
 
-    --   function()
-
-    --     vim.lsp.buf.code_action()
-    --   end,
-    --   "LSP code action",
-    -- },
-
-    },
-    v = {
-        ["J"] = {":'<,'>move-2<cr>gv=gv", "Move Line down"},
-        ["K"] = {":'<,'>move+2<cr>gv=gv", "Move Line up"},
-    },
-    x = {
-
-        ["<leader>p"] = {"\"_dP"}
-    },
+    ["<leader>p"] = { '"_dP' },
+  },
 }
 
 -- more keybinds!
@@ -58,4 +51,3 @@ return M
 -- di{ delete inside
 -- da{ delete arround
 -- C-q visual block
-
