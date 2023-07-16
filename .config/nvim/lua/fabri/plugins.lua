@@ -37,19 +37,11 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("indent_blankline").setup {
-                show_current_context = true,
-            }
-        end,
     },
     {
         "NeogitOrg/neogit",
         dependencies = "nvim-lua/plenary.nvim",
         lazy = false,
-        config = function()
-            require("neogit").setup {}
-        end,
     },
     { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
     {
@@ -59,6 +51,15 @@ return {
     {
         "christoomey/vim-tmux-navigator",
         lazy = false,
+    },
+    {"mg979/vim-visual-multi", lazy = false},
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({})
+        end,
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -84,28 +85,22 @@ return {
         },
     },
     {
-      'nvim-lualine/lualine.nvim',
-      dependencies = {
-        { 'nvim-tree/nvim-web-devicons', opt = true }
-      }
+        'nvim-lualine/lualine.nvim',
+        dependencies = {
+            { 'nvim-tree/nvim-web-devicons', opt = true }
+        }
     },
-    {"numToStr/Comment.nvim"},
+    {
+        "numToStr/Comment.nvim"
+    },
     {
         "mfussenegger/nvim-dap",
     },
     {
         "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap" },
-        config = function()
-            local dap = require "dap"
-            local dapui = require "dapui"
-            dapui.setup()
-            dap.listeners.after.event_initialized["dapui_config"] = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated["dapui_config"] = function()
-                dapui.close()
-            end
-        end,
     },
+    {"lewis6991/gitsigns.nvim"},
+    {"rcarriga/nvim-notify"},
+    {"simrat39/rust-tools.nvim"}
 }
