@@ -31,6 +31,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
   vim.keymap.set('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<cr>')
   vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+  vim.keymap.set('n', '<leader>vd', '<cmd>lua vim.diagnostic.open_float()<cr>')
   vim.keymap.set({'n', 'x'}, '<leader>mf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
   vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = true})
 end)
@@ -74,10 +75,10 @@ cmp.setup({
         end,
     },
     sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {name = 'buffer', keyword_length = 3},
-        {name = 'luasnip', keyword_length = 3},
+        {name = 'path', priority = 8},
+        {name = 'nvim_lsp', priority = 9},
+        {name = 'buffer', keyword_length = 3, priority = 7},
+        {name = 'luasnip', keyword_length = 3, priority = 6},
     },
     mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({

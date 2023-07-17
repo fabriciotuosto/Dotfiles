@@ -1,12 +1,17 @@
 return {
     {
         "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme catppuccin]])
-        end
+        priority=1000,
     },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     priority=1000,
+    -- },
+    -- {
+    --     "navarasu/onedark.nvim",
+    --     priority=1000,
+    --
+    -- },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                              , branch = '0.1.x',
@@ -102,5 +107,6 @@ return {
     },
     {"lewis6991/gitsigns.nvim"},
     {"rcarriga/nvim-notify"},
-    {"simrat39/rust-tools.nvim"}
+    {"simrat39/rust-tools.nvim"},
+    {"j-hui/fidget.nvim", tag = "legacy"},
 }
