@@ -1,6 +1,5 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-
 vim.keymap.set("v","<", ":< <CR>gv")
 vim.keymap.set("v",">", ":> <CR>gv")
 vim.keymap.set("v","<A-j>", ":m '>+1<CR>gv=gv")

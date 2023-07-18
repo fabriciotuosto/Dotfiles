@@ -3,15 +3,6 @@ return {
         "catppuccin/nvim",
         priority=1000,
     },
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     priority=1000,
-    -- },
-    -- {
-    --     "navarasu/onedark.nvim",
-    --     priority=1000,
-    --
-    -- },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                              , branch = '0.1.x',
