@@ -43,7 +43,6 @@ for _, server_name in ipairs(get_servers()) do
     capabilities = lsp_capabilities,
     on_attach=on_attach,
   })
-
 end
 
 lspconfig.elixirls.setup {
@@ -65,7 +64,6 @@ lsp.setup()
 local cmp = require('cmp')
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
-
 luasnip.config.setup({})
 
 cmp.setup({
@@ -81,7 +79,7 @@ cmp.setup({
         {name = 'luasnip', keyword_length = 3, priority = 6},
     },
     mapping = cmp.mapping.preset.insert({
-        ['<CR>'] = cmp.mapping.confirm({
+        ['<Tab>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         })
