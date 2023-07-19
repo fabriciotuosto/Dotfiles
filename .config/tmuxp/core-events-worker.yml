@@ -1,0 +1,10 @@
+session_name: worker
+start_directory: ~/Projects/Intuitivo/core-events-worker
+# shell_command_before:
+# - '[ -f .venv/bin/activate ] && source .venv/bin/activate && reset'
+windows:
+- window_name: editor
+  focus: true
+  panes:
+    - nvim .
+- window_name: shell

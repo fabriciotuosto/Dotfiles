@@ -79,7 +79,7 @@ cmp.setup({
         {name = 'luasnip', keyword_length = 3, priority = 6},
     },
     mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping.confirm({
+        ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         })
