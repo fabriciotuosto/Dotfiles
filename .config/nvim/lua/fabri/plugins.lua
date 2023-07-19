@@ -48,7 +48,10 @@ return {
         "christoomey/vim-tmux-navigator",
         lazy = false,
     },
-    {"mg979/vim-visual-multi", lazy = false},
+    {
+        "mg979/vim-visual-multi",
+        lazy = false,
+    },
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -100,4 +103,5 @@ return {
     {"rcarriga/nvim-notify"},
     {"simrat39/rust-tools.nvim"},
     {"j-hui/fidget.nvim", tag = "legacy"},
+    -- {"declancm/cinnamon.nvim", config = function() require('cinnamon').setup() end}
 }
