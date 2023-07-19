@@ -39,8 +39,9 @@ export NVM_COMPLETION=true
 
 source $HOME/.asdf/asdf.sh
 
-alias vim=/home/fabri/nvim-linux64/bin/nvim
-alias vi=/home/fabri/nvim-linux64/bin/nvim
+alias vim=nvim
+alias vi=nvim
+alias code=nvim
 alias top=bpytop
 alias ls='exa'
 alias ll='ls -alF'
@@ -50,12 +51,14 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tmux="tmux -u -2"
-eval "$(tmuxifier init -)"
 
-export EDITOR='/home/fabri/nvim-linux64/bin/nvim'
+export EDITOR='nvim'
 # export TERM=xterm-256color
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 export TERM=tmux-256color
+
+export DISABLE_AUTO_TITLE='true'
+alias intuitivo="tmuxp load -d core-api core-dashboard wallet-api wallet-app wallet-dashboard greengrass core-events-worker core-sockets infra && tmux attach-session -t core-api"
