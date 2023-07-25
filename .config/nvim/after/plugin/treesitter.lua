@@ -14,7 +14,7 @@ require('nvim-treesitter.configs').setup({
         "rust",
         "elixir",
         "python",
-        "terraform",
+        -- "terraform",
         "bash",
         "diff",
         "git_config",

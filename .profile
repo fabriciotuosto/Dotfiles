@@ -62,3 +62,4 @@ export TERM=tmux-256color
 
 export DISABLE_AUTO_TITLE='true'
 alias intuitivo="tmuxp load -d core-api core-dashboard wallet-api wallet-app wallet-dashboard greengrass core-events-worker core-sockets infra && tmux attach-session -t core-api"
+export DOCKER_BUILDKI=1.

@@ -70,7 +70,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zoxide fzf zsh-interactive-cd)
+plugins=(git zoxide fzf zsh-interactive-cd )
 export FZF_DEFAULT_COMMAND=fzf
 source $ZSH/oh-my-zsh.sh
 source ~/.profile

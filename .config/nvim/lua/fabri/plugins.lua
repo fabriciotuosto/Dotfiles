@@ -7,7 +7,7 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
-        config = {
+        opts = {
             defaults = {
                 file_ignore_patterns = {
                     "node_modules",
@@ -16,6 +16,7 @@ return {
                     ".git",
                     ".idea",
                     ".elixir_ls",
+                    ".elixir-tools",
                     ".github",
                     "deps",
                     "target",
@@ -86,7 +87,7 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons', opt = true }
+            { 'nvim-tree/nvim-web-devicons'}
         }
     },
     {
@@ -101,7 +102,15 @@ return {
     },
     {"lewis6991/gitsigns.nvim"},
     {"rcarriga/nvim-notify"},
-    {"simrat39/rust-tools.nvim"},
     {"j-hui/fidget.nvim", tag = "legacy"},
-    -- {"declancm/cinnamon.nvim", config = function() require('cinnamon').setup() end}
+    {"simrat39/rust-tools.nvim"},
+    {
+        "saecki/crates.nvim",
+        config = function(_, opts)
+            local crates = require("crates")
+            crates.setup(opt)
+            crates.show()
+        end
+    },
+    {"elixir-tools/elixir-tools.nvim"},
 }

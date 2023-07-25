@@ -62,18 +62,5 @@ for _, server_name in ipairs(get_servers()) do
     })
 end
 
-lspconfig.elixirls.setup {
-    cmd = { "/home/fabri/.elixir-ls/language_server.sh"},
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = {
-        debounce_text_changes = 50,
-    },
-    elixirLs = {
-        dialyzerEnabled = false,
-        fetchDeps = false,
-    },
-}
-
 lsp.setup()
 
