@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -28,15 +30,13 @@ fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.tmuxifier/bin
 
-. "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
 
+source "$HOME/.cargo/env"
 source $HOME/.asdf/asdf.sh
 
 alias vim=nvim
@@ -58,8 +58,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
-export TERM=tmux-256color
-
 export DISABLE_AUTO_TITLE='true'
-alias intuitivo="tmuxp load -d core-api core-dashboard wallet-api wallet-app wallet-dashboard greengrass core-events-worker core-sockets infra && tmux attach-session -t core-api"
-export DOCKER_BUILDKI=1.
+export DOCKER_BUILDKIT=1.
+
+alias intuitivo="tmuxp load -d core-api core-dashboard wallet-api wallet-app wallet-dashboard greengrass core-events-worker core-sockets && tmux attach-session -t core-api"
