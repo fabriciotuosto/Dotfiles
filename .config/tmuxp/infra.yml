@@ -1,5 +1,5 @@
 session_name: utils
-start_directory: ~/Projects/Intuitivo/_Infra
+start_directory: ~/Projects/Intuitivo/Tools
 # shell_command_before:
 # - '[ -f .venv/bin/activate ] && source .venv/bin/activate && reset'
 windows:

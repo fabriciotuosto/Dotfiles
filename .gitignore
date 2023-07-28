@@ -5,3 +5,4 @@ node_modules
 _dist
 .tool-versions
 .mypy_cache
+.config/tmux/plugins
