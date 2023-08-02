@@ -1,6 +1,6 @@
 return {
     {
-        "catppuccin/nvim",
+        "navarasu/onedark.nvim",
         priority=1000,
     },
     {

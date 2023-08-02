@@ -4,7 +4,7 @@ local elixirls = require("elixir.elixirls")
 elixir.setup {
   nextls = {
     cmd = "/home/fabri/.nextls/nextls", -- path to the executable. mutually exclusive with `port`
-    enabled = true,
+    enabled = false,
   },
   elixirls = {
     cmd = "/home/fabri/.elixir-ls/language_server.sh",

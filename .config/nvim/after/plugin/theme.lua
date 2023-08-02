@@ -1,24 +1,24 @@
-require("catppuccin").setup({
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        treesitter = true,
-        notify = true,
-        mini = false,
-        dap = {
-            enabled = true,
-            enable_ui = true,
-        }
-    }
+-- require("catppuccin").setup({
+--     integrations = {
+--         cmp = true,
+--         gitsigns = true,
+--         nvimtree = true,
+--         treesitter = true,
+--         notify = true,
+--         mini = false,
+--         dap = {
+--             enabled = true,
+--             enable_ui = true,
+--         }
+--     }
+-- })
+
+-- vim.cmd([[colorscheme catppuccin-mocha]])
+
+require("onedark").setup({
+        style="warmer"
 })
-
-vim.cmd([[colorscheme catppuccin-mocha]])
-
--- require("onedark").setup({
-    --     style="warm"
-    -- })
-    -- require('onedark').load()
+require('onedark').load()
     -- colorscheme tokyonight
     -- " There are also colorschemes for the different styles.
     -- colorscheme tokyonight-night
