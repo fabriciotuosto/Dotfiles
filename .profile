@@ -38,6 +38,13 @@ export NVM_DIR="$HOME/.nvm"
 
 source "$HOME/.cargo/env"
 source $HOME/.asdf/asdf.sh
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+eval "$(pyenv virtualenv-init -)"
 
 alias vim=nvim
 alias vi=nvim

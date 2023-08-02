@@ -114,4 +114,6 @@ return {
     },
     {"elixir-tools/elixir-tools.nvim"},
     {"hashivim/vim-terraform"},
+    {"m4xshen/autoclose.nvim"},
+    {"smjonas/live-command.nvim"},
 }
