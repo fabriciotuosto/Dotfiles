@@ -18,7 +18,7 @@ vim.opt.hlsearch=false
 vim.opt.incsearch=true
 vim.opt.termguicolors=true
 vim.o.completeopt="menuone,noselect,preview"
-vim.opt.updatetime=50
+vim.opt.updatetime=100
 vim.g.mapleader=" "
 
 vim.opt.hidden=true
@@ -26,4 +26,4 @@ vim.opt.list=true
 vim.opt.cmdheight=0
 require("fabri.mappings")
 require("fabri.lazy")
-
+require("fabri.diagnostics")

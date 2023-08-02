@@ -22,7 +22,7 @@ require('mason-lspconfig').setup({
         'tsserver',
         "pyright",
         "sqlls",
-        "terraformls",
+        -- "terraformls",
         "vimls",
         -- 'beautysh',
         -- 'prettierd',
