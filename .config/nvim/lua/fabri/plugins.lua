@@ -116,4 +116,5 @@ return {
     {"hashivim/vim-terraform"},
     {"m4xshen/autoclose.nvim"},
     {"smjonas/live-command.nvim"},
+    {"HiPhish/rainbow-delimiters.nvim"},
 }
