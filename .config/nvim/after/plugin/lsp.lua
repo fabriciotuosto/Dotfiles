@@ -63,4 +63,3 @@ for _, server_name in ipairs(get_servers()) do
 end
 
 lsp.setup()
-

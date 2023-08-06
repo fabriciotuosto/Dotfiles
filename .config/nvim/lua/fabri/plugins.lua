@@ -1,10 +1,12 @@
 return {
+    { "nvim-lua/plenary.nvim" },
     {
         "navarasu/onedark.nvim",
-        priority=1000,
+        priority = 1000,
     },
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.2',
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
@@ -66,28 +68,28 @@ return {
         branch = 'v2.x',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
+            { 'neovim/nvim-lspconfig' }, -- Required
             {
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
                 end
             },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'hrsh7th/cmp-cmdline'},
-            {'rafamadriz/friendly-snippets'}
+            { 'hrsh7th/nvim-cmp' },                  -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+            { 'L3MON4D3/LuaSnip' },                  -- Required
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'hrsh7th/cmp-cmdline' },
+            { 'rafamadriz/friendly-snippets' }
         },
     },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons'}
+            { 'nvim-tree/nvim-web-devicons' }
         }
     },
     {
@@ -100,10 +102,10 @@ return {
         "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap" },
     },
-    {"lewis6991/gitsigns.nvim"},
-    {"rcarriga/nvim-notify"},
-    {"j-hui/fidget.nvim", tag = "legacy"},
-    {"simrat39/rust-tools.nvim"},
+    { "lewis6991/gitsigns.nvim" },
+    { "rcarriga/nvim-notify" },
+    { "j-hui/fidget.nvim",       tag = "legacy" },
+    { "simrat39/rust-tools.nvim" },
     {
         "saecki/crates.nvim",
         config = function(_, opts)
@@ -112,9 +114,40 @@ return {
             crates.show()
         end
     },
-    {"elixir-tools/elixir-tools.nvim"},
-    {"hashivim/vim-terraform"},
-    {"m4xshen/autoclose.nvim"},
-    {"smjonas/live-command.nvim"},
-    {"HiPhish/rainbow-delimiters.nvim"},
+    { "elixir-tools/elixir-tools.nvim" },
+    { "hashivim/vim-terraform" },
+    { "m4xshen/autoclose.nvim" },
+    { "smjonas/live-command.nvim" },
+    { "HiPhish/rainbow-delimiters.nvim" },
+    {
+        "leoluz/nvim-dap-go",
+        ft = "go",
+    },
+    {
+        "olexsmir/gopher.nvim",
+        ft = "go",
+    },
+    {
+        "ray-x/go.nvim",
+        dependencies = 'ray-x/guihua.lua',
+        ft = "go",
+    },
+    { "cappyzawa/trim.nvim" },
+    {
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts) require 'lsp_signature'.setup(opts) end
+    },
+    {
+        "onsails/lspkind.nvim"
+    },
+    {
+        "stevearc/overseer.nvim"
+    },
+    -- { "ray-x/navigator.lua" },
 }
