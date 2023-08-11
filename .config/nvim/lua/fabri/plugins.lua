@@ -35,6 +35,15 @@ return {
         build = ":TSUpdate"
     },
     {
+        "RRethy/nvim-treesitter-textsubjects"
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-context"
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
     },
     {
@@ -87,10 +96,25 @@ return {
         },
     },
     {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts) require 'lsp_signature'.setup(opts) end
+    },
+    {
         'nvim-lualine/lualine.nvim',
         dependencies = {
             { 'nvim-tree/nvim-web-devicons' }
         }
+    },
+    {
+        "onsails/lspkind.nvim"
+    },
+    {
+        "nvim-lua/lsp-status.nvim"
+    },
+    {
+        "SmiteshP/nvim-navic"
     },
     {
         "numToStr/Comment.nvim"
@@ -104,7 +128,6 @@ return {
     },
     { "lewis6991/gitsigns.nvim" },
     { "rcarriga/nvim-notify" },
-    { "j-hui/fidget.nvim",       tag = "legacy" },
     { "simrat39/rust-tools.nvim" },
     {
         "saecki/crates.nvim",
@@ -137,17 +160,9 @@ return {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',
     },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {},
-        config = function(_, opts) require 'lsp_signature'.setup(opts) end
-    },
-    {
-        "onsails/lspkind.nvim"
-    },
-    {
-        "stevearc/overseer.nvim"
-    },
+    { "mizlan/iswap.nvim" },
+    { "stevearc/overseer.nvim" },
+    { "Wansmer/treesj" },
+    { "aznhe21/actions-preview.nvim" },
     -- { "ray-x/navigator.lua" },
 }
