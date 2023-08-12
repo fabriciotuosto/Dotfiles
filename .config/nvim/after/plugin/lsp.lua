@@ -41,11 +41,7 @@ end)
 -- (Optional) Configure lua language server for neovim
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-local lsp_capabilities =  vim.tbl_deep_extend(
-  'force',
-  capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({buffer = bufnr})

@@ -104,8 +104,18 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons' }
+            {
+                'nvim-tree/nvim-web-devicons',
+                "linrongbin16/lsp-progress.nvim",
+            }
         }
+    },
+    {
+        'linrongbin16/lsp-progress.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lsp-progress').setup()
+        end
     },
     {
         "onsails/lspkind.nvim"
