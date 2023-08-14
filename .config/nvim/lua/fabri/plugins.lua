@@ -124,9 +124,6 @@ return {
         "nvim-lua/lsp-status.nvim"
     },
     {
-        "SmiteshP/nvim-navic"
-    },
-    {
         "numToStr/Comment.nvim"
     },
     {
@@ -150,7 +147,6 @@ return {
     { "elixir-tools/elixir-tools.nvim" },
     { "hashivim/vim-terraform" },
     { "m4xshen/autoclose.nvim" },
-    { "smjonas/live-command.nvim" },
     { "HiPhish/rainbow-delimiters.nvim" },
     {
         "leoluz/nvim-dap-go",

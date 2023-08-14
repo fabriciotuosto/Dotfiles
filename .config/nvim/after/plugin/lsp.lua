@@ -22,14 +22,10 @@ require('mason-lspconfig').setup({
         'tsserver',
         "pyright",
         "sqlls",
-        -- "terraformls",
         "vimls",
         -- 'beautysh',
         -- 'prettierd',
-        -- 'mypy',
-        -- 'black',
         -- 'clang-format',
-        -- "jq-lsp",
         -- "gopls",
         -- "ocaml-lsp",
     }
@@ -47,20 +43,22 @@ lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({buffer = bufnr})
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     vim.keymap.set('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<cr>')
-    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+    -- vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
     vim.keymap.set('n', '<leader>vd', '<cmd>lua vim.diagnostic.open_float()<cr>')
-    vim.keymap.set({'n', 'x'}, '<leader>mf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
+    vim.keymap.set({'n', 'x'}, '<leader>bf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
     vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = true})
 end)
+local navic = require("nvim-navic")
+local on_attach =lsp.on_attach
 
-local on_attach = lsp.on_attach
 local get_servers = require('mason-lspconfig').get_installed_servers
 for _, server_name in ipairs(get_servers()) do
-    lspconfig[server_name].setup({
-        capabilities = lsp_capabilities,
-        -- capabilities=capabilities,
-        on_attach=on_attach,
-    })
+    if server_name ~= "elixirls" or server_name ~= "ElixirLS" then
+        lspconfig[server_name].setup({
+            capabilities = lsp_capabilities,
+            on_attach=on_attach,
+        })
+    end
 end
 
 lsp.setup()

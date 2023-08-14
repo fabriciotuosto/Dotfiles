@@ -51,5 +51,8 @@ cmp.setup({
             -- cmp.config.compare.length,
             -- cmp.config.compare.order,
         }
-    }
+    },
+    experimental = {
+        ghost_text = true
+    },
 })
