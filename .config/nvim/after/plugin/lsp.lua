@@ -48,7 +48,6 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set({'n', 'x'}, '<leader>bf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
     vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = true})
 end)
-local navic = require("nvim-navic")
 local on_attach =lsp.on_attach
 
 local get_servers = require('mason-lspconfig').get_installed_servers

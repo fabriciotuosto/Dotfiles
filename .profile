@@ -60,6 +60,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tmux="tmux -u -2"
+alias fd=fd-find
 
 export EDITOR='nvim'
 # export TERM=xterm-256color
