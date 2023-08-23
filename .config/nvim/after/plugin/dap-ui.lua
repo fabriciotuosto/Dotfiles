@@ -31,7 +31,6 @@ dap.adapters.codelldb = {
   type = 'server',
   port = "${port}",
   executable = {
-    -- Change this to your path!
     command = mason_path .. 'codelldb',
     args = {"--port", "${port}"},
     detached = true,
@@ -53,3 +52,39 @@ dap.configurations.rust= {
 
 dap.configurations.c = dap.configurations.rust
 dap.configurations.cpp = dap.configurations.rust
+
+require('dap-vscode-js').setup({
+    adapters= {'pwa-node', 'node-terminal', 'pwa-chrome'},
+    debugger_path = "/home/fabri/Projects/Tools/vscode-js-debug",
+})
+
+for _, language in ipairs({ "typescript", "javascript", "typescriptreact" }) do
+  require("dap").configurations[language] = {
+      {
+          type = "pwa-node",
+          request = "launch",
+          name = "Launch file",
+          program = "${file}",
+          cwd = "${workspaceFolder}",
+      },
+      {
+          type = "pwa-node",
+          request = "attach",
+          name = "Attach",
+          processId = require'dap.utils'.pick_process,
+          cwd = "${workspaceFolder}",
+      },
+      {
+          type = "pwa-chrome",
+          request = "attach",
+          name = "Attach Program (pwa-chrome, select port)",
+          program = "${file}",
+          cwd = vim.fn.getcwd(),
+          sourceMaps = true,
+          port = function()
+              return vim.fn.input("Select port: ", 9222)
+          end,
+          webRoot = "${workspaceFolder}",
+      },
+}
+end

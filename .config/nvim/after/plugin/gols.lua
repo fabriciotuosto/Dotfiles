@@ -7,8 +7,9 @@ lspconfig.gopls.setup {
     root_dir = util.root_pattern("go.work", "go.mod"),
     settings = {
         gopls = {
+            staticcheck = true,
             completeUnimported = true,
-            usePlaceHolders = true,
+            -- usePlaceHolders = true,
             analyses = {
                 unusedparams = true,
             }

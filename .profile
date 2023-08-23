@@ -47,7 +47,10 @@ eval "$(pyenv init -)"
 # Load pyenv-virtualenv automatically by adding
 # the following to ~/.bashrc:
 eval "$(pyenv virtualenv-init -)"
-
+# GO variables
+GOROOT=~/.asdf/installs/golang/1.21.0/go
+GOPATH=~/.asdf/installs/golang/1.21.0/packages
+PATH=$GOPATH/bin:$PATH
 alias vim=nvim
 alias vi=nvim
 alias code=nvim

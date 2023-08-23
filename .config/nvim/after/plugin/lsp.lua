@@ -52,12 +52,23 @@ local on_attach =lsp.on_attach
 
 local get_servers = require('mason-lspconfig').get_installed_servers
 for _, server_name in ipairs(get_servers()) do
-    if server_name ~= "elixirls" or server_name ~= "ElixirLS" then
-        lspconfig[server_name].setup({
-            capabilities = lsp_capabilities,
-            on_attach=on_attach,
-        })
-    end
+    lspconfig[server_name].setup({
+        capabilities = lsp_capabilities,
+        on_attach=on_attach,
+    })
 end
+lspconfig.elixirls.setup({
+  cmd = {"/home/fabri/.elixir-ls/language_server.sh"},
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = true,
+      fetchDeps = false,
+      enableTestLenses = false,
+      suggestSpecs = false,
+    }
+  }
+})
 
 lsp.setup()

@@ -31,16 +31,14 @@ require('lsp-progress').progress({
     end,
 })
 require('lualine').setup({
-    options = { theme  = "onedark"},
+    options = { theme  = "catppuccin"},
     sections = {
         lualine_c = {
             {
-                "require('lsp-progress').progress()",
+                'buffers',
             },
             {
-                'filename',
-                file_status = true,
-                path = 1,
+                "require('lsp-progress').progress()",
             },
         },
     }

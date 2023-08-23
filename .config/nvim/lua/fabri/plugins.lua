@@ -1,6 +1,10 @@
 return {
     { "nvim-lua/plenary.nvim" },
     {
+        "catppuccin/nvim",
+        priority = 1000,
+    },
+    {
         "navarasu/onedark.nvim",
         priority = 1000,
     },
@@ -69,7 +73,7 @@ return {
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({})
+            require("nvim-surround").setup()
         end,
     },
     {
@@ -94,6 +98,7 @@ return {
             { 'hrsh7th/cmp-cmdline' },
             { 'rafamadriz/friendly-snippets' },
             { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+            { 'ray-x/cmp-treesitter' },
         },
     },
     {
@@ -101,6 +106,12 @@ return {
         event = "VeryLazy",
         opts = {},
         config = function(_, opts) require 'lsp_signature'.setup(opts) end
+    },
+    {
+        "nvimdev/lspsaga.nvim",
+        config = function()
+            require("lspsaga").setup()
+        end,
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -137,6 +148,9 @@ return {
     {
         "theHamsta/nvim-dap-virtual-text"
     },
+    {
+        "mxsdev/nvim-dap-vscode-js",
+    },
     { "lewis6991/gitsigns.nvim" },
     { "rcarriga/nvim-notify" },
     { "simrat39/rust-tools.nvim" },
@@ -148,7 +162,7 @@ return {
             crates.show()
         end
     },
-    { "elixir-tools/elixir-tools.nvim" },
+    -- { "elixir-tools/elixir-tools.nvim" },
     { "hashivim/vim-terraform" },
     { "m4xshen/autoclose.nvim" },
     { "HiPhish/rainbow-delimiters.nvim" },
@@ -188,5 +202,7 @@ return {
     { "stevearc/overseer.nvim" },
     { "Wansmer/treesj" },
     { "aznhe21/actions-preview.nvim" },
+    { "stevearc/dressing.nvim" },
+    -- { "airblade/vim-rooter" },
     -- { "ray-x/navigator.lua" },
 }
