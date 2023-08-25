@@ -7,7 +7,7 @@ vim.keymap.set("v","<A-k>", ":m-2<CR>gv=gv")
 
 vim.keymap.set('n', "J", "mzJ`z")
 vim.keymap.set('x', "<leader>p", "\"_dP")
-
-vim.keymap.set('n', 'bn', ":bnext<CR>")
-vim.keymap.set('n', 'bp', ":bprev<CR>")
-vim.keymap.set('n', 'bx', ":bw<CR>")
+vim.keymap.set('n', "<C-s>",":w<CR>")
+vim.keymap.set('n', '<A-n>', ":bnext<CR>")
+vim.keymap.set('n', '<A-p>', ":bprev<CR>")
+vim.keymap.set('n', '<A-x>', ":bw<CR>")

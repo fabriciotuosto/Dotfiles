@@ -4,10 +4,10 @@ return {
         "catppuccin/nvim",
         priority = 1000,
     },
-    {
-        "navarasu/onedark.nvim",
-        priority = 1000,
-    },
+    -- {
+    --     "navarasu/onedark.nvim",
+    --     priority = 1000,
+    -- },
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
@@ -38,15 +38,15 @@ return {
         },
         build = ":TSUpdate"
     },
-    {
-        "RRethy/nvim-treesitter-textsubjects"
-    },
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    {
-        "nvim-treesitter/nvim-treesitter-context"
-    },
+    -- {
+    --     "RRethy/nvim-treesitter-textsubjects"
+    -- },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter-textobjects"
+    -- },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter-context"
+    -- },
     {
         "lukas-reineke/indent-blankline.nvim",
     },
@@ -101,12 +101,12 @@ return {
             { 'ray-x/cmp-treesitter' },
         },
     },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {},
-        config = function(_, opts) require 'lsp_signature'.setup(opts) end
-    },
+    -- {
+    --     "ray-x/lsp_signature.nvim",
+    --     event = "VeryLazy",
+    --     opts = {},
+    --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
+    -- },
     {
         "nvimdev/lspsaga.nvim",
         config = function()
@@ -121,13 +121,6 @@ return {
                 "linrongbin16/lsp-progress.nvim",
             }
         }
-    },
-    {
-        'linrongbin16/lsp-progress.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('lsp-progress').setup()
-        end
     },
     {
         "onsails/lspkind.nvim"
@@ -148,14 +141,14 @@ return {
     {
         "theHamsta/nvim-dap-virtual-text"
     },
-    {
-        "mxsdev/nvim-dap-vscode-js",
-    },
     { "lewis6991/gitsigns.nvim" },
-    { "rcarriga/nvim-notify" },
-    { "simrat39/rust-tools.nvim" },
+    {
+        "simrat39/rust-tools.nvim",
+        ft="rust",
+    },
     {
         "saecki/crates.nvim",
+        ft="rust",
         config = function(_, opts)
             local crates = require("crates")
             crates.setup(opts)
@@ -163,8 +156,11 @@ return {
         end
     },
     -- { "elixir-tools/elixir-tools.nvim" },
-    { "hashivim/vim-terraform" },
-    { "m4xshen/autoclose.nvim" },
+    {
+        "hashivim/vim-terraform",
+        ft="terraform",
+    },
+    -- { "m4xshen/autoclose.nvim" },
     { "HiPhish/rainbow-delimiters.nvim" },
     {
         "mfussenegger/nvim-dap-python",
@@ -199,10 +195,14 @@ return {
         cmd = 'CodeActionMenu',
     },
     { "mizlan/iswap.nvim" },
-    { "stevearc/overseer.nvim" },
     { "Wansmer/treesj" },
     { "aznhe21/actions-preview.nvim" },
     { "stevearc/dressing.nvim" },
-    -- { "airblade/vim-rooter" },
-    -- { "ray-x/navigator.lua" },
+    { "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            { "MunifTanjim/nui.nvim" },
+            { "rcarriga/nvim-notify" },
+        },
+    }
 }
