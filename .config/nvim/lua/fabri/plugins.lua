@@ -13,23 +13,6 @@ return {
         tag = '0.1.2',
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
-        opts = {
-            defaults = {
-                file_ignore_patterns = {
-                    "node_modules",
-                    "_dist",
-                    "dist",
-                    ".git",
-                    ".idea",
-                    ".elixir_ls",
-                    ".elixir-tools",
-                    ".github",
-                    "deps",
-                    "target",
-                    ".mypy_cache"
-                }
-            }
-        }
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -92,13 +75,13 @@ return {
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },                  -- Required
             { 'hrsh7th/cmp-nvim-lsp' },              -- Required
-            { 'L3MON4D3/LuaSnip' },                  -- Required
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-cmdline' },
             { 'rafamadriz/friendly-snippets' },
             { 'hrsh7th/cmp-nvim-lsp-signature-help' },
             { 'ray-x/cmp-treesitter' },
+			{ 'L3MON4D3/LuaSnip' },                  -- Required
         },
     },
     -- {

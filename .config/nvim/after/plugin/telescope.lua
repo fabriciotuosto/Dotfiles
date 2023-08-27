@@ -1,8 +1,25 @@
+require('telescope').setup({
+	defaults = {
+		file_ignore_patterns = {
+			"node_modules",
+			"_dist",
+			"dist",
+			".git",
+			".idea",
+			".elixir_ls",
+			".elixir-tools",
+			".github",
+			"deps",
+			"target",
+			".mypy_cache"
+		}
+	}
+})
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files({follow=true, no_ignore=true, hidden=true}) end, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<C-f>', function() builtin.find_files({follow=true, no_ignore=true, hidden=true}) end, {})
+vim.keymap.set('n', '<C-f>', function() builtin.find_files({follow=true, no_ignore=false, hidden=false}) end, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
