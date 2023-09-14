@@ -22,7 +22,7 @@ cmp.setup({
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
             menu = {
                 buffer = "[buf]",
-                nvim_lsp = "[LSP]",
+                nvim_lsp = "[lsp]",
                 path = "[path]",
                 luasnip = "[snip]"
             }
