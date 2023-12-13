@@ -4,10 +4,6 @@ return {
         "catppuccin/nvim",
         priority = 1000,
     },
-    -- {
-    --     "navarasu/onedark.nvim",
-    --     priority = 1000,
-    -- },
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
@@ -21,15 +17,6 @@ return {
         },
         build = ":TSUpdate"
     },
-    -- {
-    --     "RRethy/nvim-treesitter-textsubjects"
-    -- },
-    -- {
-    --     "nvim-treesitter/nvim-treesitter-textobjects"
-    -- },
-    -- {
-    --     "nvim-treesitter/nvim-treesitter-context"
-    -- },
     {
         "lukas-reineke/indent-blankline.nvim",
     },
@@ -78,24 +65,11 @@ return {
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-cmdline' },
-            -- { 'rafamadriz/friendly-snippets' },
             { 'hrsh7th/cmp-nvim-lsp-signature-help' },
             { 'ray-x/cmp-treesitter' },
 			{ 'L3MON4D3/LuaSnip' },                  -- Required
         },
     },
-    -- {
-    --     "ray-x/lsp_signature.nvim",
-    --     event = "VeryLazy",
-    --     opts = {},
-    --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
-    -- },
-    -- {
-    --     "nvimdev/lspsaga.nvim",
-    --     config = function()
-    --         require("lspsaga").setup()
-    --     end,
-    -- },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = {
@@ -116,7 +90,6 @@ return {
 		"mhartington/formatter.nvim",
 		event = "VeryLazy",
 	},
-    -- { "mizlan/iswap.nvim" },
     { "Wansmer/treesj" },
     { "aznhe21/actions-preview.nvim" },
     { "cappyzawa/trim.nvim" },
@@ -152,12 +125,10 @@ return {
             crates.show()
         end
     },
-    -- { "elixir-tools/elixir-tools.nvim" },
     {
         "hashivim/vim-terraform",
         ft="terraform",
     },
-    -- { "m4xshen/autoclose.nvim" },
     {
         "mfussenegger/nvim-dap-python",
         ft = "python",
@@ -185,12 +156,4 @@ return {
         dependencies = 'ray-x/guihua.lua',
         ft = "go",
     },
-    -- { "stevearc/dressing.nvim" },
-    -- { "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     dependencies = {
-    --         { "MunifTanjim/nui.nvim" },
-    --         { "rcarriga/nvim-notify" },
-    --     },
-    -- }
 }

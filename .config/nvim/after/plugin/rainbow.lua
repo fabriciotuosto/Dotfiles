@@ -1,1 +1,1 @@
-require('rainbow-delimiters.setup')({})
+-- require('rainbow-delimiters.setup')({})
